@@ -6,7 +6,7 @@ RUN apt-get update && apt-get upgrade -y
 RUN apt-get install -y python3 python3-pip
 
 # Fix for externally managed environments.
-RUN rm /usr/lib/python*/EXTERNALLY-MANAGEDc
+RUN rm /usr/lib/python*/EXTERNALLY-MANAGED
 
 # Install Flask using pip3.
 RUN pip3 install flask
