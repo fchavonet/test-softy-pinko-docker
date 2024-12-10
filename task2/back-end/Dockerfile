@@ -10,6 +10,7 @@ RUN rm /usr/lib/python*/EXTERNALLY-MANAGED
 
 # Install Flask using pip3.
 RUN pip3 install flask
+RUN pip3 install flask flask-cors
 
 # Set the working directory.
 WORKDIR /app
