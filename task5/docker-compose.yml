@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  back-end:
+    build:
+      context: ./back-end
+      dockerfile: Dockerfile
+    expose:
+      - "5252"
+
+  front-end:
+    build:
+      context: ./front-end
+      dockerfile: Dockerfile
+    expose:
+      - "9000"
+
+  proxy:
+    build:
+      context: ./proxy
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - back-end
+      - front-end
